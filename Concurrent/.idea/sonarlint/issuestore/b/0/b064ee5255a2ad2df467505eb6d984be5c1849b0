@@ -1,0 +1,6 @@
+
+Asquid:S1444"*Make this "public static stop" field final(«é·Ç
+jsquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(«é·Ç
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(´‹¹öþÿÿÿÿ
+~"squid:ClassVariableVisibilityCheck"PMake stop a static final constant or non-public and provide accessors if needed.(«é·Ç

@@ -1,0 +1,13 @@
+
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(¨¥Ó…ûÿÿÿÿ
+bsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(’ª®…
+]squid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(ž©ùóúÿÿÿÿ
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(Ç˜²èúÿÿÿÿ
+?squid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ
+Ssquid:UnusedPrivateMethod".Remove this unused private "methodOne" method.(¤­©®
+T
+squid:S106 "9Replace this use of System.out or System.err by a logger.(¨¥Ó…ûÿÿÿÿ
