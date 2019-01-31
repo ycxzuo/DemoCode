@@ -1,0 +1,17 @@
+
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(²²¼üÿÿÿÿ8ô§¨Ö…-
+Qsquid:S2209"5Change this instance-reference to a static reference.(Ÿüõ–8‹©§ø…-
+Ksquid:S1172"*Remove this unused method parameter "guy".(»à³ùÿÿÿÿ8èÎ«ø…-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(·è¼‘8é¬ø…-
+Qsquid:S2209"5Change this instance-reference to a static reference.(Œ€û°8¦²°Ö…-
+Ksquid:S1172"*Remove this unused method parameter "guy".(Éİ××ûÿÿÿÿ8ô§¨Ö…-
+Qsquid:S2209"5Change this instance-reference to a static reference.(Æù¸8Ûİ¯Ö…-
+osquid:ModifiersOrderCheck"EReorder the modifiers to comply with the Java Language Specification.(ëòêÆ8úÄöÙ…-
+^squid:S2094"BRemove this empty class, write its code or make it an "interface".(ëòêÆ8ØÅ Ö…-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(¼ŞÂüûÿÿÿÿ8èÎ«ø…-
+Fsquid:S1172"*Remove this unused method parameter "guy".(è‚õô8é¬ø…-
+Qsquid:S1610"5Convert the abstract class "Human" into an interface.(ëòêÆ8ØÅ Ö…-
+Qsquid:S2209"5Change this instance-reference to a static reference.(õâÒå8­ë§ø…-

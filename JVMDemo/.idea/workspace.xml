@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cca65682-0215-45a6-bb17-9584c69f792a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/bean/ConstClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo3.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo1.java" afterDir="false" />
+    <list default="true" id="cca65682-0215-45a6-bb17-9584c69f792a" name="Default Changelist" comment="jvm部分测试代码">
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/executingengine/CalcDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dispatch/Dispatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dispatch/DynamicDispatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dispatch/Overload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dispatch/StaticDispatch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dynamictypelanguage/Demo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dynamictypelanguage/MethodHandleDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/invokedynamic/InvokeDynamicDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Test.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/resolution/StaticResolution.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Concurrent/out/production/Concurrent/com/yczuoxin/concurrent/demo/test/Demo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/bean/ConstClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/bean/ConstClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/bean/SubClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/bean/SubClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/bean/SuperClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/bean/SuperClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/init/InitDemo1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/init/InitDemo1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/init/InitDemo2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/init/InitDemo2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/init/InitDemo3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/classloader/init/InitDemo3.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,90 +30,90 @@
   <component name="CodeInsightWorkspaceSettings">
     <option name="optimizeImportsOnTheFly" value="true" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="1800709331">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="5" />
-          <entry key="project.open.time.0" value="3" />
-          <entry key="project.open.time.1" value="1" />
-          <entry key="project.open.time.6" value="1" />
-          <entry key="project.opened" value="5" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="IDEA_MODULE" value="1" />
-          <entry key="JAVA" value="14" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="JAVA" value="530" />
-          <entry key="PLAIN_TEXT" value="12" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/bean/SubClass.java">
+        <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/invoke/CallSite.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
+            <state relative-caret-position="133">
+              <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/bean/SuperClass.java">
+        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/invokedynamic/InvokeDynamicDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="152">
-              <caret line="8" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo1.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/bean/ConstClass.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="114">
-              <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo3.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="228">
-              <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="297">
+              <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
               <folding>
-                <element signature="e#328#329#0" expanded="true" />
-                <element signature="e#386#387#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+                <element signature="e#201#202#0" expanded="true" />
+                <element signature="e#237#238#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo2.java">
+        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dynamictypelanguage/MethodHandleDemo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="38">
-              <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+            <state relative-caret-position="418">
+              <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
               <folding>
-                <element signature="e#390#391#0" expanded="true" />
-                <element signature="e#445#446#0" expanded="true" />
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/invoke/MethodHandle.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="233">
+              <caret line="408" column="27" selection-start-line="408" selection-start-column="27" selection-end-line="408" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Test.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="570">
+              <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+              <folding>
+                <element signature="e#241#242#0" expanded="true" />
+                <element signature="e#290#291#0" expanded="true" />
+                <element signature="e#356#357#0" expanded="true" />
+                <element signature="e#418#419#0" expanded="true" />
+                <element signature="e#490#491#0" expanded="true" />
+                <element signature="e#547#548#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/executingengine/CalcDemo.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="266">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+              <folding>
+                <element signature="e#115#116#0" expanded="true" />
+                <element signature="e#136#137#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/invoke/MethodHandles.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="987">
+              <caret line="774" column="27" selection-start-line="774" selection-start-column="11" selection-end-line="774" selection-end-column="27" />
+              <folding>
+                <element signature="e#2064#2065#0" expanded="true" />
+                <element signature="e#2126#2127#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -114,16 +128,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>getClassLoader0</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
-  </component>
-  <component name="GradleLocalSettings">
-    <option name="projectSyncType">
-      <map>
-        <entry key="D:/codes/resourcecode/spring-framework-5.0.2.RELEASE-中文注释版" value="PREVIEW" />
-        <entry key="D:/github/spring-statemachine" value="PREVIEW" />
-      </map>
-    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -139,14 +150,36 @@
         <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/test/SuperDemo.java" />
         <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo1.java" />
         <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/test/Demo.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo4.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo5.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo6.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/classloader/ClassLoaderTest.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/classloader/bootstrap/BootstrapDemo1.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/Test.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/classloader/ClassLoaderDemo2.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/classloader/ClassLoaderDemo1.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/stack/local_variable_table/SlotDemo1.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/stack/local_variable_table/SlotDemo2.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/stack/local_variable_table/SlotDemo3.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/Test.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/resolution/StaticResolution.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/resolution/Overload.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/resolution/StaticDispatch.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/resolution/DynamicDispatch.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/resolution/Dispatch.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/Dispatch.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dispatch/Dispatch.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dynamictypelanguage/Demo.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dynamictypelanguage/MethodHandleDemo.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/invokedynamic/InvokeDynamicDemo.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/GrandFather.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Father.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Son.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Demo.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Test.java" />
+        <option value="$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/executingengine/CalcDemo.java" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -163,38 +196,28 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="7">
-    <option name="x" value="-344" />
-    <option name="y" value="155" />
-    <option name="width" value="1400" />
-    <option name="height" value="973" />
+    <option name="x" value="-8" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1056" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
+      <flattenPackages ProjectPane="false" />
       <hideEmptyPackages ProjectPane="false" />
       <abbreviatePackageNames ProjectPane="true" />
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
               <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="classloader" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
@@ -222,6 +245,68 @@
               <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
               <item name="com" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="yczuoxin" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="yczuoxin" type="462c0819:PsiDirectoryNode" />
+              <item name="jvm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="yczuoxin" type="462c0819:PsiDirectoryNode" />
+              <item name="jvm" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="production" type="462c0819:PsiDirectoryNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="com" type="462c0819:PsiDirectoryNode" />
+              <item name="yczuoxin" type="462c0819:PsiDirectoryNode" />
+              <item name="jvm" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+              <item name="executingengine" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JVMDemo" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="demo" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+            </path>
+            <path>
+              <item name="JVMDemo" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.7 &gt;" type="70bed36:NamedLibraryElementNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -232,13 +317,14 @@
     <property name="SONARLINT_PRECOMMIT_ANALYSIS" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548917405663" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.15891473" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.gutterIcons" />
+    <property name="settings.editor.selected.configurable" value="debugger.stepping" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -257,14 +343,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.Demo (1)">
-    <configuration name="Demo (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.classloader.test.Demo" />
+  <component name="RunManager" selected="Application.CalcDemo">
+    <configuration name="CalcDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.executingengine.CalcDemo" />
       <module name="JVMDemo" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yczuoxin.jvm.demo.classloader.test.*" />
+          <option name="PATTERN" value="com.yczuoxin.jvm.demo.executingengine.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -273,12 +359,12 @@
       </method>
     </configuration>
     <configuration name="Demo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.classloader.bean.Demo" />
+      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.methodinvoke.dynamictypelanguage.Demo" />
       <module name="JVMDemo" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yczuoxin.jvm.demo.classloader.bean.*" />
+          <option name="PATTERN" value="com.yczuoxin.jvm.demo.methodinvoke.dynamictypelanguage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -286,13 +372,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InitDemo1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.classloader.init.InitDemo1" />
+    <configuration name="InvokeDynamicDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.methodinvoke.invokedynamic.InvokeDynamicDemo" />
       <module name="JVMDemo" />
-      <option name="VM_PARAMETERS" value="-XX:+TraceClassLoading" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yczuoxin.jvm.demo.classloader.init.*" />
+          <option name="PATTERN" value="com.yczuoxin.jvm.demo.methodinvoke.invokedynamic.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -300,13 +386,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InitDemo2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.classloader.init.InitDemo2" />
+    <configuration name="MethodHandleDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.methodinvoke.dynamictypelanguage.MethodHandleDemo" />
       <module name="JVMDemo" />
-      <option name="VM_PARAMETERS" value="-XX:+TraceClassLoading" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yczuoxin.jvm.demo.classloader.init.*" />
+          <option name="PATTERN" value="com.yczuoxin.jvm.demo.methodinvoke.dynamictypelanguage.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -314,13 +400,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="InitDemo3" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.classloader.init.InitDemo3" />
+    <configuration name="SlotDemo3" type="Application" factoryName="Application">
+      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.stack.local_variable_table.SlotDemo3" />
       <module name="JVMDemo" />
-      <option name="VM_PARAMETERS" value="-XX:+TraceClassLoading" />
+      <option name="VM_PARAMETERS" value="-verbose:gc" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.yczuoxin.jvm.demo.methodinvoke.methoddispatchrule.Test" />
+      <module name="JVMDemo" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.yczuoxin.jvm.demo.classloader.init.*" />
+          <option name="PATTERN" value="com.yczuoxin.jvm.demo.methodinvoke.methoddispatchrule.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -335,12 +429,13 @@
       </method>
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
+      <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="TestNG" factoryName="TestNG">
+    <configuration default="true" type="TestNG">
       <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
       <properties />
       <listeners />
@@ -349,19 +444,20 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.InitDemo2" />
-      <item itemvalue="Application.InitDemo1" />
-      <item itemvalue="Application.InitDemo3" />
+      <item itemvalue="Application.SlotDemo3" />
       <item itemvalue="Application.Demo" />
-      <item itemvalue="Application.Demo (1)" />
+      <item itemvalue="Application.MethodHandleDemo" />
+      <item itemvalue="Application.InvokeDynamicDemo" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="Application.CalcDemo" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Demo (1)" />
+        <item itemvalue="Application.CalcDemo" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="Application.InvokeDynamicDemo" />
+        <item itemvalue="Application.MethodHandleDemo" />
         <item itemvalue="Application.Demo" />
-        <item itemvalue="Application.InitDemo3" />
-        <item itemvalue="Application.InitDemo1" />
-        <item itemvalue="Application.InitDemo2" />
       </list>
     </recent_temporary>
   </component>
@@ -384,6 +480,11 @@
       <workItem from="1545223099671" duration="28000" />
       <workItem from="1545223152739" duration="2279000" />
       <workItem from="1545307662642" duration="8076000" />
+      <workItem from="1545984987770" duration="1234000" />
+      <workItem from="1546076341401" duration="10705000" />
+      <workItem from="1547103191584" duration="3350000" />
+      <workItem from="1547367990721" duration="22349000" />
+      <workItem from="1548398192999" duration="31063000" />
     </task>
     <task id="LOCAL-00001" summary="jvm部分测试代码">
       <created>1545222713069</created>
@@ -392,32 +493,52 @@
       <option name="project" value="LOCAL" />
       <updated>1545222713069</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="jvm部分测试代码">
+      <created>1547448284950</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1547448284950</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10999000" />
+    <option name="totallyTimeSpent" value="79700000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15671642" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2457356" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="JRebel" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
       <window_info id="Designer" order="4" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="UI Designer" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32998884" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4989339" weight="0.27616927" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.3997773" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32962137" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
-      <window_info anchor="bottom" id="Messages" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="SonarLint" order="11" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32962137" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" visible="true" weight="0.33964366" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.27616927" />
+      <window_info anchor="bottom" id="SonarLint" order="11" weight="0.32962137" />
       <window_info anchor="bottom" id="Run with VisualVM" order="12" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
@@ -426,6 +547,7 @@
       <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" />
       <window_info anchor="bottom" id="Debug with VisualVM" order="18" />
       <window_info anchor="bottom" id="SonarQube" order="19" />
+      <window_info anchor="bottom" id="Docker" order="20" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -433,40 +555,151 @@
       <window_info anchor="right" id="Maven Projects" order="4" />
       <window_info anchor="right" id="Database" order="5" />
       <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="right" id="Palette" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
     </layout>
+    <layout-to-restore>
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.35074627" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="JRebel" order="2" side_tool="true" />
+      <window_info id="Favorites" order="3" side_tool="true" />
+      <window_info id="Designer" order="4" />
+      <window_info id="Image Layers" order="5" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="UI Designer" order="7" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32962137" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.4989339" visible="true" weight="0.27616927" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.3997773" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32962137" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
+      <window_info anchor="bottom" id="Messages" order="8" weight="0.32962137" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49946696" weight="0.48218262" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5010661" side_tool="true" weight="0.30846325" />
+      <window_info anchor="bottom" id="SonarLint" order="11" weight="0.32962137" />
+      <window_info anchor="bottom" id="Run with VisualVM" order="12" />
+      <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="14" show_stripe_button="false" />
+      <window_info anchor="bottom" id="MyBatis Sql Log" order="15" />
+      <window_info anchor="bottom" id="JRebel Executor" order="16" />
+      <window_info anchor="bottom" id="JRebel Console" order="17" side_tool="true" />
+      <window_info anchor="bottom" id="Debug with VisualVM" order="18" />
+      <window_info anchor="bottom" id="SonarQube" order="19" />
+      <window_info anchor="bottom" id="Docker" order="20" show_stripe_button="false" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Key Promoter X" order="3" />
+      <window_info anchor="right" id="Maven Projects" order="4" />
+      <window_info anchor="right" id="Database" order="5" />
+      <window_info anchor="right" id="Palette&#9;" order="6" />
+      <window_info anchor="right" id="Maven" order="7" />
+      <window_info anchor="right" id="Palette" order="8" />
+      <window_info anchor="right" id="Capture Analysis" order="9" />
+      <window_info anchor="right" id="Theme Preview" order="10" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
-  </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="jvm部分测试代码" />
     <option name="LAST_COMMIT_MESSAGE" value="jvm部分测试代码" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/JVMDemo.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/interfaces/StaticInterface.java" />
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/test/Demo.java" />
     <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/bean/SubClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="44">
           <caret line="2" column="40" selection-start-line="2" selection-start-column="40" selection-end-line="2" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/bean/SuperClass.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="152">
+        <state relative-caret-position="176">
           <caret line="8" selection-start-line="8" selection-end-line="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/bean/ConstClass.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <folding>
+            <element signature="e#328#329#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo4.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="110">
+          <caret line="5" column="11" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="396">
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="e#306#307#0" expanded="true" />
+            <element signature="e#350#351#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="628" column="48" lean-forward="true" selection-start-line="628" selection-start-column="48" selection-end-line="628" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/ClassLoader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="286">
+          <caret line="1551" column="26" selection-start-line="1551" selection-start-column="26" selection-end-line="1551" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo6.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-4">
+          <caret line="8" column="17" lean-forward="true" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/Class.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="865" column="19" selection-start-line="865" selection-start-column="19" selection-end-line="865" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="44">
           <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
           <folding>
             <element signature="e#390#391#0" expanded="true" />
@@ -475,83 +708,343 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/bean/Demo.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/Test.java" />
+    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/ClassLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="27" lean-forward="true" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        <state relative-caret-position="3116">
+          <caret line="231" column="22" selection-start-line="231" selection-start-column="22" selection-end-line="231" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/Test.java" />
+    <entry file="file://$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/resolution/StaticResolution.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#379#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="646">
+          <caret line="122" column="6" selection-start-line="122" selection-start-column="6" selection-end-line="122" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/CharSequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="58" column="17" selection-start-line="58" selection-start-column="17" selection-end-line="58" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/resolution/DynamicDispatch.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-132">
+          <folding>
+            <element signature="e#0#1024#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/classloader/ClassLoaderDemo1.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="551">
+          <caret line="30" column="110" selection-start-line="30" selection-start-column="110" selection-end-line="30" selection-end-column="110" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/test/SuperDemo.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/stack/local_variable_table/SlotDemo1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        <state relative-caret-position="38">
+          <caret line="2" selection-start-line="2" selection-end-line="10" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/test/SubDemo.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/stack/local_variable_table/SlotDemo2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" column="1" lean-forward="true" selection-start-line="4" selection-start-column="1" selection-end-line="4" selection-end-column="1" />
+        <state relative-caret-position="228">
+          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo1.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/stack/local_variable_table/SlotDemo3.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/classloader/ClassLoaderDemo2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
-          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/util/Optional.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/classloader/bootstrap/BootstrapDemo1.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="287" column="27" selection-start-line="287" selection-start-column="27" selection-end-line="287" selection-end-column="27" />
+        <state relative-caret-position="57">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dispatch/Dispatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="22" column="13" selection-start-line="22" selection-start-column="13" selection-end-line="22" selection-end-column="13" />
           <folding>
-            <element signature="e#4026#4027#0" expanded="true" />
-            <element signature="e#4084#4085#0" expanded="true" />
+            <element signature="e#197#198#0" expanded="true" />
+            <element signature="e#241#242#0" expanded="true" />
+            <element signature="e#312#313#0" expanded="true" />
+            <element signature="e#374#375#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#503#504#0" expanded="true" />
+            <element signature="e#546#547#0" expanded="true" />
+            <element signature="e#609#610#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/Object.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dispatch/Overload.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2748">
-          <caret line="221" column="28" selection-start-line="221" selection-start-column="28" selection-end-line="221" selection-end-column="28" />
+        <state relative-caret-position="152">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#154#155#0" expanded="true" />
+            <element signature="e#204#205#0" expanded="true" />
+            <element signature="e#249#250#0" expanded="true" />
+            <element signature="e#296#297#0" expanded="true" />
+            <element signature="e#342#343#0" expanded="true" />
+            <element signature="e#390#391#0" expanded="true" />
+            <element signature="e#441#442#0" expanded="true" />
+            <element signature="e#494#495#0" expanded="true" />
+            <element signature="e#540#541#0" expanded="true" />
+            <element signature="e#588#589#0" expanded="true" />
+            <element signature="e#641#642#0" expanded="true" />
+            <element signature="e#693#694#0" expanded="true" />
+            <element signature="e#741#742#0" expanded="true" />
+            <element signature="e#792#793#0" expanded="true" />
+            <element signature="e#846#847#0" expanded="true" />
+            <element signature="e#902#903#0" expanded="true" />
+            <element signature="e#948#949#0" expanded="true" />
+            <element signature="e#977#978#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/Thread.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dispatch/StaticDispatch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="84">
-          <caret line="150" column="25" lean-forward="true" selection-start-line="150" selection-start-column="25" selection-end-line="150" selection-end-column="25" />
+        <state relative-caret-position="152">
+          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+          <folding>
+            <element signature="e#254#255#0" expanded="true" />
+            <element signature="e#301#302#0" expanded="true" />
+            <element signature="e#339#340#0" expanded="true" />
+            <element signature="e#386#387#0" expanded="true" />
+            <element signature="e#426#427#0" expanded="true" />
+            <element signature="e#475#476#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/bean/ConstClass.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/resolution/StaticResolution.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" column="59" selection-start-line="6" selection-start-column="59" selection-end-line="6" selection-end-column="59" />
+        <state relative-caret-position="95">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/test/Demo.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dynamictypelanguage/Demo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="209">
+          <caret line="11" column="1" selection-start-line="11" selection-start-column="1" selection-end-line="11" selection-end-column="1" />
+          <folding>
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#279#280#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk-11/lib/src.zip!/java.base/java/lang/System.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="140" column="35" selection-start-line="140" selection-start-column="24" selection-end-line="140" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dispatch/DynamicDispatch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="356">
+          <caret line="30" column="26" selection-start-line="30" selection-start-column="26" selection-end-line="30" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/invoke/MemberName.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="774" column="23" selection-start-line="774" selection-start-column="23" selection-end-line="774" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/invoke/MethodHandleImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="111" column="22" selection-start-line="111" selection-start-column="22" selection-end-line="111" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/invoke/CallSite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="133">
+          <caret line="32" column="60" selection-start-line="32" selection-start-column="60" selection-end-line="32" selection-end-column="60" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/Object.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="63" column="33" selection-start-line="63" selection-start-column="33" selection-end-line="63" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Father.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="3" column="13" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+          <folding>
+            <element signature="e#126#127#0" expanded="true" />
+            <element signature="e#183#184#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="753" selection-start-line="753" selection-end-line="753" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/GrandFather.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <caret line="4" column="47" selection-start-line="4" selection-start-column="47" selection-end-line="4" selection-end-column="47" />
+          <folding>
+            <element signature="e#111#112#0" expanded="true" />
+            <element signature="e#147#148#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/classloader/init/InitDemo3.java">
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Son.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="228">
-          <caret line="12" column="1" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
+          <caret line="12" column="62" selection-start-line="12" selection-start-column="62" selection-end-line="12" selection-end-column="62" />
           <folding>
-            <element signature="e#328#329#0" expanded="true" />
-            <element signature="e#386#387#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/out/production/JVMDemo/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Demo.class">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/Thread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="768" column="5" lean-forward="true" selection-start-line="768" selection-start-column="5" selection-end-line="768" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/invoke/LambdaForm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="152">
+          <caret line="26" lean-forward="true" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#0#75780#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_172/src.zip!/java/lang/invoke/MethodHandles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="92" column="25" selection-start-line="92" selection-start-column="25" selection-end-line="92" selection-end-column="25" />
+          <folding>
+            <element signature="e#3053#3054#0" expanded="true" />
+            <element signature="e#3115#3116#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/invoke/MethodHandles.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="987">
+          <caret line="774" column="27" selection-start-line="774" selection-start-column="11" selection-end-line="774" selection-end-column="27" />
+          <folding>
+            <element signature="e#2064#2065#0" expanded="true" />
+            <element signature="e#2126#2127#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_80/src.zip!/java/lang/invoke/MethodHandle.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="408" column="27" selection-start-line="408" selection-start-column="27" selection-end-line="408" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/dynamictypelanguage/MethodHandleDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="418">
+          <caret line="24" column="24" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/invokedynamic/InvokeDynamicDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="297">
+          <caret line="19" column="5" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#201#202#0" expanded="true" />
+            <element signature="e#237#238#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/methodinvoke/methoddispatchrule/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="570">
+          <caret line="30" column="9" selection-start-line="30" selection-start-column="9" selection-end-line="30" selection-end-column="9" />
+          <folding>
+            <element signature="e#241#242#0" expanded="true" />
+            <element signature="e#290#291#0" expanded="true" />
+            <element signature="e#356#357#0" expanded="true" />
+            <element signature="e#418#419#0" expanded="true" />
+            <element signature="e#490#491#0" expanded="true" />
+            <element signature="e#547#548#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/yczuoxin/jvm/demo/executingengine/CalcDemo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#115#116#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -607,7 +1100,7 @@
       </state>
       <state key="JdkListConfigurable.UI">
         <settings>
-          <last-edited>1.7</last-edited>
+          <last-edited>1.8</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -624,6 +1117,7 @@
             <option name="proportions">
               <list>
                 <option value="0.15891473" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
