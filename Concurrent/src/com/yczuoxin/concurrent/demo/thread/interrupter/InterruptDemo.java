@@ -1,6 +1,10 @@
 package com.yczuoxin.concurrent.demo.thread.interrupter;
 
-public class InterruptedDemo {
+/**
+ * 可能线程需要等待 2 秒，但是由于某些特殊原因不需要等待那么久了，
+ * 此时可以使用 interrupt() 方法抛出异常而返回，线程恢复到激活状态
+ */
+public class InterruptDemo {
 
     public static void main(String[] args) throws InterruptedException {
         Thread threadOne = new Thread(() -> {

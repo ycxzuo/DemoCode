@@ -3,7 +3,7 @@ package com.yczuoxin.concurrent.demo.thread.interrupter;
 /**
  * 该方法通过线程的中断标志来控制是否退出循环
  */
-public class InterrupterDemo2 {
+public class InterruptDemo2 {
     public static void main(String[] args) throws InterruptedException {
         Thread thread = new Thread(() -> {
             while (!Thread.currentThread().isInterrupted()) {

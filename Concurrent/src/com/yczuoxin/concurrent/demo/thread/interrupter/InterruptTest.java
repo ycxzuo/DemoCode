@@ -2,7 +2,7 @@ package com.yczuoxin.concurrent.demo.thread.interrupter;
 
 import java.util.concurrent.TimeUnit;
 
-public class InterrupterDemo {
+public class InterruptTest {
 
     public static int i;
 
