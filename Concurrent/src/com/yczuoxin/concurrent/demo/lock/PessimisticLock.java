@@ -13,10 +13,12 @@ package com.yczuoxin.concurrent.demo.lock;
  * 开启事务
  *
  * // 2
- * query("select * from table where id = #{id} for update", id)
+ * object entry = query("select * from table where id = #{id} for update", id)
  *
  * // 3
  * 组装数据
+ * entry.setName(name)
+ * entry.setAge(age)
  *
  * // 4
  * update(update table set name = #{name}, age = #{age} where id = #{id}, entry)
