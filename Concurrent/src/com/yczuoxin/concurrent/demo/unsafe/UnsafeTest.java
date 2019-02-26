@@ -5,7 +5,9 @@ import sun.misc.Unsafe;
 import java.lang.reflect.Field;
 
 /**
- * Unsafe 的测试
+ * Unsafe 的测试，其需要 Bootstrap ClassLoader 加载，
+ * 但是很明显 UnsafeTest 是由 App ClassLoader 加载的
+ * 所以需要用反射来获取
  */
 public class UnsafeTest {
 
