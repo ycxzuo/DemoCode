@@ -13,6 +13,8 @@ import sun.misc.Contended;
  * FilledLong 是一个类对象，而类对象的字节码的对象头占用 8 字节，所以一个 FilledLong
  * 对象实际会占用 64 字节的内存，这正好可以放入一个缓存行。
  *
+ * 该注解是对类进行字节填充
+ *
  * 该注解可以修饰类，也可以修饰变量，例如 Thread 类中的
  *  The current seed for a ThreadLocalRandom
  *  @sun.misc.Contended("tlr")
