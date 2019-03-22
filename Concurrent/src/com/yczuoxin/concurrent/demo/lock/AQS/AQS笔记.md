@@ -68,5 +68,27 @@ AQS 类没有提供可用的  `tryAcquire()`  方法和 `tryRelease()` 方法，
 
 
 
-### 共享方式资源的获取和释放
+## 共享方式资源的获取和释放
+
+### 获取
+
+当线程调用 `acquireShared(int arg)` 方法获取共享资源时，会首先使用 `tryAcquireShared()` 尝试获取资源（设置状态变量 `state` 的值），成功则直接返回，失败则将当前线程封装为类型为 Node.SHARED 的 Node 节点后，插入到 AQS 阻塞队列的尾部，并调用 `LockSupport.park(this) ` 挂起自己
+
+### 释放
+
+当一个线程调用 `releaseShard(int arg)` 方法释放共享资源时，会尝试使用 `tryReleaseShared()` 方法释放资源（设置状态变量 `state` 的值），然后调用 `LockSupport.unpark(thread)` 方法激活 AQS 队列里面被阻塞的一个线程（ thread ）。被激活的线程则使用  `tryAcquireShared()` 尝试，看当前状态变量 `state` 的值是否能满足自己的需要，满足则该线程被激活，然后继续向下执行，否则还是会被放入 AQS 队列并挂起
+
+### 注意
+
+与独占方式相同
+
+
+
+## isHeldExclusively()
+
+基于 AQS 实现的锁除了需要重写上面介绍的方法外，还需要重写 `isHeldExclusively()` 方法，来判断锁时被当前线程独占还是共享
+
+
+
+## Interruptibly
 
