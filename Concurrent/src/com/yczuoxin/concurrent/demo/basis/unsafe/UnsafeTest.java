@@ -14,12 +14,12 @@ public class UnsafeTest {
     /**
      * 获取 Unsafe 的实例
     */
-    static final Unsafe unsafe;
+    static Unsafe unsafe;
 
     /**
      * 记录变量 state 在类 TestUnsafe 中的偏移值
     */
-    static final long stateOffset;
+    static long stateOffset;
 
     /**
      * 创建一个变量 state 并初始化为 0
