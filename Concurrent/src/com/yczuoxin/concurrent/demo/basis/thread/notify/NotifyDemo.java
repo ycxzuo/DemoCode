@@ -3,7 +3,7 @@ package com.yczuoxin.concurrent.demo.basis.thread.notify;
 /**
  * notify
  *  一个线程调用共享对象的 notify() 方法后，会唤醒一个在该共享变量上调用 wait() 系列方法后挂起的线程
- *  一个共享变量可能会有多个线程在等待，具体唤醒哪个线程是随机的
+ *  一个共享变量可能会有多个线程在等待，具体唤醒哪个线程是随机的 (Hotspot 是 FIFO)，所以线程 A 一定先唤醒
  *
  * notifyAll
  *  notifyAll 会唤醒该共享变量上调用 wait() 系列方法的所有线程

@@ -73,8 +73,9 @@ private Node enq(Node node) {
 * waitStatus：    记录当前线程等待状态
   * CANCELLED：  线程被取消了
   * SIGNAL：          线程需要被唤醒
-  * CONDITION：   线程在条件队列里面等待
+  * CONDITION：   线程在条件队列里面等待，因为调用了 `Condition.await()` 而被阻塞
   * PROPAGATE： 释放共享资源时需要通知其它节点
+  * 0:                        以上都没有
 * prev：              记录当前节点的前驱节点
 * next：              记录当前节点的后继节点
 
@@ -122,15 +123,103 @@ AQS 类没有提供可用的  `tryAcquire()`  方法和 `tryRelease()` 方法，
 
 当线程调用 `acquireShared(int arg)` 方法获取共享资源时，会首先使用 `tryAcquireShared()` 尝试获取资源（设置状态变量 `state` 的值），成功则直接返回，失败则将当前线程封装为类型为 Node.SHARED 的 Node 节点后，插入到 AQS 阻塞队列的尾部，并调用 `LockSupport.park(this) ` 挂起自己
 
+其中 `tryAcquireShared()` 的返回值有 3 种
+
+* 0 -> 表示当前线程获取共享锁成功，但它后续的线程是无法继续获取的，也就是不需要把它后面等待的节点唤醒
+* 正数 -> 表示当前线程获取共享锁成功且它后续等待的节点也有可能继续获取共享锁成功，也就是说此时需要把后续节点唤醒让它们去尝试获取共享锁
+* 负数 -> 表示获取锁失败，需要进入等待队列
+
+```java
+private void doAcquireShared(int arg) {
+    // 创建一个新结点（共享模式），加入到队尾
+    final Node node = addWaiter(Node.SHARED);
+    boolean failed = true;
+    try {
+        boolean interrupted = false;
+        for (;;) {
+            // 拿到前驱节点
+            final Node p = node.predecessor();
+            // 前驱节点是头节点
+            if (p == head) {
+                // 尝试获取共享锁
+                int r = tryAcquireShared(arg);
+                // 获取成功
+                if (r >= 0) {
+                    // 将该节点设置为头节点
+                    setHeadAndPropagate(node, r);
+                    // 将引用值为 null，方便垃圾收集器回收
+                    p.next = null; // help GC
+                    if (interrupted)
+                        selfInterrupt();
+                    failed = false;
+                    return;
+                }
+            }
+            // 前继节点判断当前线程是否应该被阻塞，如果前继节点处于CANCELLED状态，则顺便删除这些节点重新构造队列
+            if (shouldParkAfterFailedAcquire(p, node) &&
+                // 把当前线程挂起，从而阻塞住线程的调用栈
+                parkAndCheckInterrupt())
+                interrupted = true;
+        }
+    } finally {
+        if (failed)
+            cancelAcquire(node);
+    }
+}
+```
+
+
+
 #### 释放
 
 当一个线程调用 `releaseShard(int arg)` 方法释放共享资源时，会尝试使用 `tryReleaseShared()` 方法释放资源（设置状态变量 `state` 的值），然后调用 `LockSupport.unpark(thread)` 方法激活 AQS 队列里面被阻塞的一个线程（ thread ）。被激活的线程则使用  `tryAcquireShared()` 尝试，看当前状态变量 `state` 的值是否能满足自己的需要，满足则该线程被激活，然后继续向下执行，否则还是会被放入 AQS 队列并挂起
+
+```java
+public final void acquireShared(int arg) {
+    if (tryAcquireShared(arg) < 0)
+        doAcquireShared(arg);
+}
+```
+
+```java
+private void doReleaseShared() {
+    // 自旋
+    for (;;) {
+        // 唤醒操作由头结点开始，注意这里的头节点已经是上面新设置的头结点了，其实就是唤醒上面新获取到共享锁的节点的后继节点
+        Node h = head;
+        if (h != null && h != tail) {
+            int ws = h.waitStatus;
+            // 如果当前节点是 SIGNAL 意味着，它正在等待一个信号，或者说，它在等待被唤醒
+            if (ws == Node.SIGNAL) {
+                // 重置 waitStatus 标志位
+                if (!compareAndSetWaitStatus(h, Node.SIGNAL, 0))
+                    continue;            // loop to recheck cases
+                // 重置成功后,唤醒下一个节点
+                unparkSuccessor(h);
+            }
+            // 如果本身头结点的 waitStatus 是出于重置状态（waitStatus==0）的
+            else if (ws == 0 &&
+                     // 将其设置为传播状态。意味着需要将状态向后一个节点传播
+                     !compareAndSetWaitStatus(h, 0, Node.PROPAGATE))
+                continue;                // loop on failed CAS
+        }
+        // 如果头结点没有发生变化，表示设置完成，退出循环
+        // 如果头结点发生变化，比如说其他线程获取到了锁，为了使自己的唤醒动作可以传递，必须进行重试
+        if (h == head)                   // loop if head changed
+            break;
+    }
+}
+```
+
+
 
 #### 注意
 
 与独占方式相同
 
+```java
 
+```
 
 ### isHeldExclusively()
 
@@ -146,5 +235,109 @@ AQS 类没有提供可用的  `tryAcquire()`  方法和 `tryRelease()` 方法，
 
 
 
-## 自定义同步器
+### acquireQueued()
+
+在等待队列中排队拿号（中间没其它事干可以休息），直到拿到号后再返回
+
+```java
+final boolean acquireQueued(final Node node, int arg) {
+    // 标记是否成功拿到资源
+    boolean failed = true;
+    try {
+        // 标记等待过程中是否被中断过
+        boolean interrupted = false;
+        // 自旋
+        for (;;) {
+            // 拿到前驱节点
+            final Node p = node.predecessor();
+            // 如果前驱是 head，那么该节点便有资格去尝试获取资源（头节点释放完资源唤醒或者被 interrupt）
+            if (p == head && tryAcquire(arg)) {
+                // 前继出队，将头节点设置为自己
+                setHead(node);
+                // 之前头节点 head 已置为 null，此处再将 head.next 置为 null，就是为了方便 GC 回收以前的 head 结点。也就意味着之前拿完资源的结点出队了
+                p.next = null; // help GC
+                failed = false;
+                // 返回等待过程中是否被中断过
+                return interrupted;
+            }
+            // 如果自己可以休息了，就进入 waiting 状态，直到被 unpark()
+            if (shouldParkAfterFailedAcquire(p, node) &&
+                parkAndCheckInterrupt())
+                //如果等待过程中被中断过，哪怕只有那么一次，就将 interrupted 标记为 true
+                interrupted = true;
+        }
+    } finally {
+        if (failed)
+            cancelAcquire(node);
+    }
+}
+```
+
+
+
+### setHeadAndPropagate(Node, int)
+
+两个入参，一个是当前成功获取共享锁的节点，一个就是 `tryAcquireShared()` 方法的返回值，它可能大于0也可能等于0
+
+```java
+private void setHeadAndPropagate(Node node, int propagate) {
+    // 当前头节点
+    Node h = head; 
+    // 设置新的头节点，即把当前获取到锁的节点设置为头节点
+    setHead(node);
+    // propagate > 0 表示调用方指明了后继节点需要被唤醒
+    // 头节点后面的节点需要被唤醒（waitStatus < 0），不论是之前的头结点还是新的头结点
+    if (propagate > 0 || h == null || h.waitStatus < 0 ||
+        (h = head) == null || h.waitStatus < 0) {
+        Node s = node.next;
+        if (s == null || s.isShared())
+            // 如果当前节点的后继节点是共享类型或者没有后继节点，则进行唤醒
+            // 这里可以理解为除非明确指明不需要唤醒（后继等待节点是独占类型），否则都要唤醒
+            doReleaseShared();
+    }
+}
+```
+
+
+
+### shouldParkAfterFailedAcquire(Node, Node)
+
+此方法主要用于检查状态，看看自己是否真的可以进入 waiting 状态
+
+```java
+private static boolean shouldParkAfterFailedAcquire(Node pred, Node node) {
+    int ws = pred.waitStatus;
+    if (ws == Node.SIGNAL)
+		// 如果前继的节点状态为 SIGNAL，表明当前节点需要 unpark，则返回成功，此时 acquireQueued 方法的 parkAndCheckInterrupt 将导致线程阻塞
+        return true;
+    if (ws > 0) {
+        // 果前继节点状态为 CANCELLED，说明前置节点已经被放弃，则找到一个最近的非取消的前继节点，返回 false，acquireQueued 方法的无限循环将递归调用该方法，直至满足前继的节点状态为 SIGNAL，返回成功并导致线程阻塞
+        do {
+            node.prev = pred = pred.prev;
+        } while (pred.waitStatus > 0);
+        pred.next = node;
+    } else {
+        // 此时等待状态一定是 0 或者 PROPAGATE（释放共享资源时需要通知其它节点），则设置前继的状态为 SIGNAL，返回 false 后进入 acquireQueued 的无限循环，直至满足前继的节点状态为 SIGNAL，返回成功并导致线程阻塞
+        compareAndSetWaitStatus(pred, ws, Node.SIGNAL);
+    }
+    return false;
+}
+```
+
+
+
+### parkAndCheckInterrupt()
+
+如果线程找好安全休息点后，那就可以安心去休息了。此方法就是让线程去休息，真正进入等待状态
+
+```java
+private final boolean parkAndCheckInterrupt() {
+    // 调用 park() 使线程进入 waiting 状态
+    LockSupport.park(this);
+    // 如果被唤醒，查看自己是不是被中断的
+    return Thread.interrupted();
+}
+```
+
+
 
