@@ -4,13 +4,12 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
-import java.util.concurrent.locks.ReentrantLock;
 
 public class ReentrantLockList {
 
     private List<String> list = new ArrayList<>(Arrays.asList("1","2","3"));
 
-    private volatile ReentrantLock lock = new ReentrantLock();
+    private volatile MyReentrantLock lock = new MyReentrantLock();
 
     public void add(String e) {
         lock.lock();
