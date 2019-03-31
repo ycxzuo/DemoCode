@@ -1,4 +1,4 @@
-package com.yczuoxin.concurrent.demo.lock.AQS.ReentrantReadWriteLock;
+package com.yczuoxin.concurrent.demo.lock.aqs.reentrantreadwritelock;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.CountDownLatch;

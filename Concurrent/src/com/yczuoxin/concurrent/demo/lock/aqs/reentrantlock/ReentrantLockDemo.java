@@ -1,4 +1,4 @@
-package com.yczuoxin.concurrent.demo.lock.AQS.ReentrantLock;
+package com.yczuoxin.concurrent.demo.lock.aqs.reentrantlock;
 
 /**
  * 可重入锁示例

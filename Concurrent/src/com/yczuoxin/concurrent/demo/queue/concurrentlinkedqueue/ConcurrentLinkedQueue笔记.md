@@ -50,12 +50,11 @@ public boolean offer(E e) {
 	
     for (Node<E> t = tail, p = t;;) {
         Node<E> q = p.next;
+        // 如果 q == null，p 是最后一个节点
         if (q == null) {
-            // p 是最后一个节点
+            // CAS 操作将 p 的下一个节点由 null 切换为 新插入的节点，如果失败，说明是其他线程同时进入将节点插入到了尾节点上，重新进入该方法
             if (p.casNext(null, newNode)) {
-                // Successful CAS is the linearization point
-                // for e to become an element of this queue,
-                // and for newNode to become "live".
+                // 判断是否是第一次进这个方法，即当前节点 p 是否已经被更改过了
                 if (p != t) // hop two nodes at a time
                     casTail(t, newNode);  // Failure is OK.
                 return true;

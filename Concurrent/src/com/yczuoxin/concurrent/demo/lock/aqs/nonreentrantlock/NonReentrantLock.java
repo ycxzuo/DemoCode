@@ -1,4 +1,4 @@
-package com.yczuoxin.concurrent.demo.lock.AQS.NonReentrantLock;
+package com.yczuoxin.concurrent.demo.lock.aqs.nonreentrantlock;
 
 import java.io.Serializable;
 import java.util.concurrent.TimeUnit;

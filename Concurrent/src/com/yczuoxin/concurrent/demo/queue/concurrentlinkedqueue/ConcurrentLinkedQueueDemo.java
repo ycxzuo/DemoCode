@@ -1,4 +1,4 @@
-package com.yczuoxin.concurrent.demo.queue.ConcurrentLinkedQueue;
+package com.yczuoxin.concurrent.demo.queue.concurrentlinkedqueue;
 
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -8,7 +8,8 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 public class ConcurrentLinkedQueueDemo {
 
     public static void main(String[] args) {
-        ConcurrentLinkedQueue queue = new ConcurrentLinkedQueue();
+        ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue();
+        queue.add("aaa");
     }
 
 }

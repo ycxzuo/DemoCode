@@ -1,4 +1,4 @@
-package com.yczuoxin.concurrent.demo.lock.AQS.ReentrantLock;
+package com.yczuoxin.concurrent.demo.lock.aqs.reentrantlock;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;

@@ -1,4 +1,4 @@
-package com.yczuoxin.concurrent.demo.lock.AQS.NonReentrantLock;
+package com.yczuoxin.concurrent.demo.lock.aqs.nonreentrantlock;
 
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
