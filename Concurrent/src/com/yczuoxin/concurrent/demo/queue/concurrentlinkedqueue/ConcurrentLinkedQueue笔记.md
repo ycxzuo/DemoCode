@@ -55,8 +55,9 @@ public boolean offer(E e) {
             // CAS 操作将 p 的下一个节点由 null 切换为 新插入的节点，如果失败，说明是其他线程同时进入将节点插入到了尾节点上，重新进入该方法
             if (p.casNext(null, newNode)) {
                 // 判断是否是第一次进这个方法，即当前节点 p 是否已经被更改过了
-                if (p != t) // hop two nodes at a time
-                    casTail(t, newNode);  // Failure is OK.
+                if (p != t) 
+                    // 
+                    casTail(t, newNode);  
                 return true;
             }
             // Lost CAS race to another thread; re-read next
