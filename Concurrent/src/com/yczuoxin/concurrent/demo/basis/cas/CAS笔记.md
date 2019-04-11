@@ -19,4 +19,5 @@ boolean compareAndSwapLong(Object obj, long valueOffset, long expect, long updat
 
 CAS 有一个经典的 ABA 问题，其产生是因为变量的状态值产生了环形转换，就是变量的值可以从 A 到 B，然后再从 B 到 A。
 
-如果变量的值只能朝着一个方向转换，比如 A 到 B，B 到 C，不构成环形就不会出现问题。JDK 中的 AtomicStampedReference 类给每个变量的状态值都配备了一个时间戳，从而避免了 ABA 问题的产生
+如果变量的值只能朝着一个方向转换，比如 A 到 B，B 到 C，不构成环形就不会出现问题。JDK 中的 `AtomicStampedReference` 类给每个变量的状态值都配备了一个时间戳，从而避免了 ABA 问题的产生
+

@@ -1,7 +1,6 @@
 package com.yczuoxin.concurrent.other.reflect;
 
 import java.lang.reflect.Method;
-import java.util.List;
 
 public class ReflectDemo {
     public static void main(String[] args) throws Exception {

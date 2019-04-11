@@ -1,4 +1,4 @@
-package com.yczuoxin.concurrent.demo.basis.bean;
+package com.yczuoxin.jvm.demo.classloader.bean;
 
 public class Person {
     public Person(String name, int age) {

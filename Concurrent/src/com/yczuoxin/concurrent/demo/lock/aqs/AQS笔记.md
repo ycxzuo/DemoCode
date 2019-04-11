@@ -61,8 +61,6 @@ private Node enq(Node node) {
 
 
 
-
-
 ### Node（内部类）
 
 队列元素的类型
@@ -71,10 +69,10 @@ private Node enq(Node node) {
 * SHARED：     标记该线程是获取共享资源时被阻塞
 * EXCLUSIVE：标记该线程是获取独占资源时被阻塞
 * waitStatus：    记录当前线程等待状态
-  * CANCELLED：  线程被取消了
-  * SIGNAL：          线程需要被唤醒
-  * CONDITION：   线程在条件队列里面等待，因为调用了 `Condition.await()` 而被阻塞
-  * PROPAGATE： 释放共享资源时需要通知其它节点
+  * CANCELLED(1)：  线程被取消了
+  * SIGNAL(-1)：         线程需要被唤醒
+  * CONDITION(-2)：  线程在条件队列里面等待，因为调用了 `Condition.await()` 而被阻塞
+  * PROPAGATE(-3)：释放共享资源时需要通知其它节点
   * 0:                        以上都没有
 * prev：              记录当前节点的前驱节点
 * next：              记录当前节点的后继节点
@@ -338,6 +336,3 @@ private final boolean parkAndCheckInterrupt() {
     return Thread.interrupted();
 }
 ```
-
-
-
