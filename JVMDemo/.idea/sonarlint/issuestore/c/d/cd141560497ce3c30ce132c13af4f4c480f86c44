@@ -1,6 +1,0 @@
-
-Nsquid:S1199"-Extract this nested code block into a method.(ÒÌâ–øÿÿÿÿ8ıÓëØ„-
-psquid:S1215"TDon't try to be smarter than the JVM, remove this call to run the garbage collector.(Ì°¬“8ıÓëØ„-
-Lsquid:S1481"0Remove this unused "placeholder" local variable.(¸›Â«8ıÓëØ„-
-Bsquid:S1481"&Remove this unused "a" local variable.(€ôá8ıÓëØ„-
-[squid:S1854"?Remove this useless assignment to local variable "placeholder".(¸›Â«8ıÓëØ„-
