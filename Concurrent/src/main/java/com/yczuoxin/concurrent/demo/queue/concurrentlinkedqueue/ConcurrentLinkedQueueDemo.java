@@ -1,5 +1,8 @@
 package com.yczuoxin.concurrent.demo.queue.concurrentlinkedqueue;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedDeque;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
@@ -8,12 +11,34 @@ import java.util.concurrent.ConcurrentLinkedQueue;
  */
 public class ConcurrentLinkedQueueDemo {
 
+    private static Queue<String> queue = new ConcurrentLinkedQueue<>();
+    // private static Queue<String> queue = new LinkedList<>();// 会出现 java.util.ConcurrentModificationException
+
     public static void main(String[] args) {
-        ConcurrentLinkedQueue<String> queue = new ConcurrentLinkedQueue();
-        queue.add("aaa");
-        queue.add("bbb");
-        queue.add("ccc");
-        System.out.println(queue.poll());
+        Thread threadOne = new Thread(ConcurrentLinkedQueueDemo::operator,"ThreadOne");
+        Thread threadTwo = new Thread(ConcurrentLinkedQueueDemo::operator,"ThreadTwo");
+
+        threadOne.start();
+        threadTwo.start();
     }
 
+    private static void operator(){
+        int i = 0;
+        while (i++ < 6) {
+            String val = Thread.currentThread().getName() + i;
+            queue.add(val);
+            printAll();
+        }
+    }
+
+    private static void printAll(){
+        String value;
+
+        Iterator iter = queue.iterator();
+        while (iter.hasNext()) {
+            value = (String) iter.next();
+            System.out.print(value + ",");
+        }
+        System.out.println();
+    }
 }
