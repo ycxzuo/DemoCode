@@ -28,9 +28,11 @@ public class ThreadExecutionQuestion {
         while (thread.isAlive()) {
             synchronized (thread) {
                 try {
+                    System.out.println("执行线程名称：" + Thread.currentThread().getName());
                     thread.wait(); // 到底是谁通知 Thread -> thread.notify();
                     System.out.println(thread.getName());
 //                    LockSupport.park(); // 死锁发生
+                    Thread.sleep(1000);
                 } catch (Exception e) {
                     throw new RuntimeException(e);
                 }

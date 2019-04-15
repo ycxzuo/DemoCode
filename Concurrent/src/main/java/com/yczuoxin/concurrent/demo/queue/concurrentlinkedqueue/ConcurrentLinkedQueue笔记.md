@@ -2,7 +2,7 @@
 
 ## 概念
 
-`ConcurrentLinkedQueue` 是线程安全的无边界非阻塞队列，其底层是单向链表
+`ConcurrentLinkedQueue` 是线程安全的无边界非阻塞队列，其底层是单向链表，使用的是 CAS 实现的非阻塞队列
 
 
 
@@ -37,9 +37,9 @@
 
 
 
-## 底层
+### 方法解析
 
-### offer(E e)
+#### offer(E e)
 
 在队列尾部插入元素 e，由于 `ConcurrentLinkedQueue ` 是无边界队列，所以该方法不会返回 false
 
@@ -76,7 +76,7 @@ tail 节点不一定是最后一个节点，它会跳跃着更新，做多会滞
 
 
 
-### poll()
+#### poll()
 
 弹出队列首节点的值
 
@@ -116,19 +116,19 @@ public E poll() {
 
 
 
-### peek()
+#### peek()
 
 返回首节点的值，跟 poll() 方法相比少了移除操作
 
 
 
-### first()
+#### first()
 
 返回首节点，跟 peek() 方法相比返回的是一个节点而不是值
 
 
 
-### updateHead(Node, Node)
+#### updateHead(Node, Node)
 
 在更新头节点的时候原来的head就会自己指向自己，成为哨兵
 

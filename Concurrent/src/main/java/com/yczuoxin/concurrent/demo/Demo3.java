@@ -6,5 +6,7 @@ public class Demo3 {
         x = 3;
         y = 4;
         System.out.println(x != (x = y));
+
+        System.out.println(1 >>> 1);
     }
 }
