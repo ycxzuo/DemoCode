@@ -158,7 +158,7 @@ private static <T> void siftUpComparable(int k, T x, Object[] array) {
 
 ### offer(E e)
 
-插入一个非 null 元素，永远返回 true，`put(E e)` 和 `add(E e)` 都是调用的 `offer(E e) 方法`
+插入一个非 null 元素，永远返回 true，**`put(E e)` 和 `add(E e)` 都是调用的 `offer(E e) 方法`**
 
 ```java
 public boolean offer(E e) {
@@ -193,50 +193,38 @@ public boolean offer(E e) {
 
 ### siftDownComparable(int k, T x, Object[] array, int n)
 
-
+在二叉树堆中找到找到最小的值作为队首节点
 
 ```java
 private static <T> void siftDownComparable(int k, T x, Object[] array, int n) {
     if (n > 0) {
         Comparable<? super T> key = (Comparable<? super T>)x;
-        int half = n >>> 1;           // loop while a non-leaf
+        // 找到队列中间节点
+        int half = n >>> 1;
+        // 如果没有遍历到最中间的节点
         while (k < half) {
-            int child = (k << 1) + 1; // assume left child is least
+            // 找到二叉树堆的左子节点角标
+            int child = (k << 1) + 1;
             Object c = array[child];
+            // 找到二叉树堆的右子节点角标
             int right = child + 1;
+            // 如果右子节点不是最后一个节点，找到值比较小的子叶根节点值作为子节点
             if (right < n &&
                 ((Comparable<? super T>) c).compareTo((T) array[right]) > 0)
                 c = array[child = right];
+            // 如果子节点比最后一个节点小，则跳出循环
             if (key.compareTo((T) c) <= 0)
                 break;
             array[k] = c;
             k = child;
         }
+        // 最小值设给队首
         array[k] = key;
     }
 }
 ```
 
-
-
-
-
-### poll()
-
-弹出最小的元素（二叉树堆的根节点），没有节点就返回 null
-
-```java
-public E poll() {
-    final ReentrantLock lock = this.lock;
-    lock.lock();
-    try {
-        // 返回最小的元素
-        return dequeue();
-    } finally {
-        lock.unlock();
-    }
-}
-```
+![方法图解](http://wx1.sinaimg.cn/large/0060lm7Tly1g25dwgfg7nj30jz0akaav.jpg)
 
 
 
@@ -262,12 +250,79 @@ private E dequeue() {
         array[n] = null;
         Comparator<? super E> cmp = comparator;
         if (cmp == null)
+            // 在二叉树堆中找到找到最小的值作为队首节点
             siftDownComparable(0, x, array, n);
         else
             siftDownUsingComparator(0, x, array, n, cmp);
+        // 将队列长度设置为比之前 -1
         size = n;
         return result;
     }
 }
 ```
 
+
+
+### poll()
+
+弹出最小的元素（二叉树堆的根节点），没有节点就返回 null
+
+```java
+public E poll() {
+    final ReentrantLock lock = this.lock;
+    lock.lock();
+    try {
+        // 返回最小的元素
+        return dequeue();
+    } finally {
+        lock.unlock();
+    }
+}
+```
+
+
+
+### take()
+
+弹出最小的元素，如果队列没有元素。则挂起阻塞，直到插入元素被唤醒，如果在挂起等待唤醒过程中被中止，则抛出异常
+
+```java
+public E take() throws InterruptedException {
+    final ReentrantLock lock = this.lock;
+    lock.lockInterruptibly();
+    E result;
+    try {
+        // 防止虚假唤醒
+        while ( (result = dequeue()) == null)
+            notEmpty.await();
+    } finally {
+        lock.unlock();
+    }
+    return result;
+}
+```
+
+
+
+### peek()
+
+返回最小的元素，由于不需要改变队列顺序，只需要取到队首元素的值即可
+
+```java
+public E peek() {
+    final ReentrantLock lock = this.lock;
+    lock.lock();
+    try {
+        // 判断队列是否有值，有则返回队首节点，没有则返回 null
+        return (size == 0) ? null : (E) queue[0];
+    } finally {
+        lock.unlock();
+    }
+}
+```
+
+
+
+## 小结
+
+`PriorityBlockingQueue` 在**插入的的时候有自己的排序算法（二叉树堆），取出的是后如果要改变队列的顺序，会再用排序算法找到最小的值放在队首**
