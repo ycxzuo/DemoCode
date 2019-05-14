@@ -8,13 +8,20 @@ package com.yczuoxin.concurrent.demo.basis.thread.deamon;
  * Tomcat 的接受线程和处理线程都是守护线程
  */
 public class DaemonThreadDemo {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         Thread daemonThread = new Thread(() -> {
-
+            Thread[] threads = new Thread[5];
+            Thread.enumerate(threads);
+            Thread thread = threads[0];
+            for (int i = 0; i < Integer.MAX_VALUE; i++) {
+                System.out.println(thread.isAlive());
+            }
         });
 
         // 设置该线程为守护线程
         daemonThread.setDaemon(true);
         daemonThread.start();
+        Thread.sleep(100);
+        System.out.println("main thread is finish");
     }
 }

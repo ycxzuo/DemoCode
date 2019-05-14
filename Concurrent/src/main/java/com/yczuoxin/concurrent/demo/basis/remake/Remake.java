@@ -1,6 +1,7 @@
 package com.yczuoxin.concurrent.demo.basis.remake;
 
 /**
+ * 指令重排
  * 可能在输出 4 之前会输出 0，这是由于第 3 步和第 4 步可能发生指令重排
  */
 public class Remake {

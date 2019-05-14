@@ -271,3 +271,26 @@ void clean(SNode s) {
 
 
 
+## TransferQueue双向队列
+
+### 字段
+
+```java
+/** Head of queue */
+transient volatile QNode head;
+/** Tail of queue */
+transient volatile QNode tail;
+/** 标记要被取消的节点 */
+transient volatile QNode cleanMe;
+```
+
+
+
+### 内部类 QNode
+
+```java
+volatile QNode next;          // next node in queue
+volatile Object item;         // CAS'ed to or from null
+volatile Thread waiter;       // to control park/unpark
+final boolean isData;
+```
