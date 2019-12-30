@@ -20,7 +20,8 @@ public class Queue<E> {
             throw new IllegalArgumentException("队列空间不能小于或等于 0");
         }
         this.threshold = threshold;
-        this.currentSize = this.first = this.tail = 0;
+        this.currentSize = 0;
+        this.first = this.tail = - 1;
         elements = new Object[threshold];
     }
 
@@ -32,11 +33,13 @@ public class Queue<E> {
             if (threshold == currentSize) {
                 throw new RuntimeException("队列已经满了:" + threshold);
             }
-            if (tail == threshold) {
+            // 到达了数组的末端，需要跳转到数组的开头
+            if (tail == threshold - 1) {
                 elements[0] = e;
-                tail = 1;
+                // 将末节点重置
+                tail = 0;
             } else {
-                elements[tail++] = e;
+                elements[++tail] = e;
             }
             currentSize++;
         }
@@ -45,7 +48,7 @@ public class Queue<E> {
 
     public synchronized E poll() {
         E e = peek();
-        elements[first++] = null;
+        elements[first] = null;
         currentSize--;
         return e;
     }
@@ -55,7 +58,8 @@ public class Queue<E> {
         if (currentSize == 0) {
             throw new RuntimeException("队列已经空了");
         }
-        if (first == threshold) {
+        // 到达了数组的末端，需要跳转到数组的开头
+        if (++first == threshold) {
             first = 0;
         }
         return (E) elements[first];
