@@ -15,6 +15,12 @@
     <name>democode</name>
     <description>demo code</description>
 
+    <modules>
+        <module>Concurrent</module>
+        <module>DataStructure</module>
+        <module>JVMDemo</module>
+    </modules>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
