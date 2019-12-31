@@ -33,6 +33,9 @@ public class Queue<E> {
             if (threshold == currentSize) {
                 throw new RuntimeException("队列已经满了:" + threshold);
             }
+            if (first < 0) {
+                first = 0;
+            }
             // 到达了数组的末端，需要跳转到数组的开头
             if (tail == threshold - 1) {
                 elements[0] = e;
@@ -49,6 +52,9 @@ public class Queue<E> {
     public synchronized E poll() {
         E e = peek();
         elements[first] = null;
+        if (++first == threshold) {
+            first = 0;
+        }
         currentSize--;
         return e;
     }
@@ -59,9 +65,7 @@ public class Queue<E> {
             throw new RuntimeException("队列已经空了");
         }
         // 到达了数组的末端，需要跳转到数组的开头
-        if (++first == threshold) {
-            first = 0;
-        }
+
         return (E) elements[first];
     }
 
