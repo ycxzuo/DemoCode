@@ -54,7 +54,7 @@ public class TwoWayLinkedList<E> {
         }
     }
 
-    public E indexOf (int index) {
+    public synchronized E indexOf (int index) {
         if (index >= size || index < 0) {
             throw new ArrayIndexOutOfBoundsException("超过了链表长度" + size);
         }
@@ -73,7 +73,7 @@ public class TwoWayLinkedList<E> {
         }
     }
 
-    public int find (E e) {
+    public synchronized int find (E e) {
         if (null == e || null == first) {
             return -1;
         }
@@ -89,7 +89,7 @@ public class TwoWayLinkedList<E> {
         return -1;
     }
 
-    public boolean remove(Object o) {
+    public synchronized boolean remove(Object o) {
         if (null == o || null == first) {
             return false;
         }
@@ -110,7 +110,7 @@ public class TwoWayLinkedList<E> {
         return false;
     }
 
-    public int size(){
+    public synchronized int size(){
         return size;
     }
 }

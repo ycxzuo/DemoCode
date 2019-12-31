@@ -100,4 +100,8 @@ public class SingleLinkedList<E> {
         }
         return -1;
     }
+
+    public synchronized int size() {
+        return size;
+    }
 }
