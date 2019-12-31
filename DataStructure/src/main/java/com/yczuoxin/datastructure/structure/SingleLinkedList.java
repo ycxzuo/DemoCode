@@ -31,16 +31,21 @@ public class SingleLinkedList<E> {
         size++;
     }
 
-    public synchronized void addTail(E e) {
-        if (head == null) {
-            addFirst(e);
-            size++;
-            return;
+    public void addTail(E e) {
+        if (null == e) {
+            throw new NullPointerException("数据不能为空");
         }
-        Node<E> newTail = new Node<>(e);
-        tail.next = newTail;
-        tail = newTail;
-        size++;
+        synchronized (this) {
+            if (head == null) {
+                addFirst(e);
+                size++;
+                return;
+            }
+            Node<E> newTail = new Node<>(e);
+            tail.next = newTail;
+            tail = newTail;
+            size++;
+        }
     }
 
     public synchronized boolean remove(Object o) {
@@ -68,8 +73,8 @@ public class SingleLinkedList<E> {
         return false;
     }
 
-    public synchronized E find (int index) {
-        if (index > size) {
+    public synchronized E find(int index) {
+        if (index >= size || index < 0) {
             throw new ArrayIndexOutOfBoundsException("超过了链表长度" + size);
         }
         E e;
@@ -81,6 +86,9 @@ public class SingleLinkedList<E> {
     }
 
     public synchronized int indexOf(E e) {
+        if (null == e) {
+            return -1;
+        }
         int index = 0;
         Node<E> current = head;
         while (current != null) {
