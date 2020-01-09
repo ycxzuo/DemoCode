@@ -68,9 +68,10 @@ public class BinTree<E extends Comparable> {
                 return true;
             }
             // 左子树为空
-            if (null == node.left) {
+            else if (null == node.left) {
                 if (node == root) {
                     root = node.right;
+                    root.parent = null;
                     return true;
                 }
                 Node<E> parent = node.parent;
@@ -79,6 +80,51 @@ public class BinTree<E extends Comparable> {
                 } else {
                     parent.left = null;
                 }
+                clearNode(node);
+                return true;
+            }
+            // 右子树为空
+            else if (null == node.right) {
+                if (node == root) {
+                    root = node.left;
+                    root.parent = null;
+                    return true;
+                }
+                Node<E> parent = node.parent;
+                if (parent.right == node) {
+                    parent.right = null;
+                } else {
+                    parent.left = null;
+                }
+                clearNode(node);
+                return true;
+            }
+            // 左右子树都不为空
+            else {
+                // 先用左子节点替换当前节点
+                Node<E> right = node.right;
+                if (node == root) {
+                    root = root.right;
+                } else {
+                    // 如果删除的节点是左节点
+                    // 将自己的右子节点绑定替换当前位置
+                    Node<E> parent = node.parent;
+                    if (node == parent.left) {
+                        parent.left = right;
+                    } else {
+                        parent.right = right;
+                    }
+                    right.parent = parent;
+                }
+                // 找到删除节点右节点的最左节点（即最小值）
+                Node<E> current = right;
+                while (current.left != null) {
+                    current = current.left;
+                }
+                current.left = node.left;
+                node.left.parent = current;
+                clearNode(node);
+                return true;
             }
         }
         return false;
@@ -100,6 +146,17 @@ public class BinTree<E extends Comparable> {
             }
         }
         return null;
+    }
+
+    /**
+     * help GC
+     * @param node
+     */
+    private void clearNode(Node<E> node) {
+        node.parent = null;
+        node.element = null;
+        node.left = null;
+        node.right = null;
     }
 
 }
