@@ -3,6 +3,9 @@ package com.yczuoxin.datastructure.algorithm;
 import java.util.Arrays;
 import java.util.List;
 
+/**
+ * 插入排序
+ */
 public class InsertSort {
     public static void main(String[] args) {
         sort(Arrays.asList(2,5,3,4,1,8)).forEach(System.out::println);

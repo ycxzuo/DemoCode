@@ -14,6 +14,9 @@ public class ShellSort {
     }
 
     public static List<Integer> sort(List<Integer> list) {
+        if (list.isEmpty()) {
+            return list;
+        }
         int increment = list.size() / 2;
         while (increment > 0) {
             sortByIncrement(list, increment);

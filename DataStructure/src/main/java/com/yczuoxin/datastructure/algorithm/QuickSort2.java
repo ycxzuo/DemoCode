@@ -27,16 +27,20 @@ public class QuickSort2 {
             int right = end;
             int base = list.get(left);
             while (right > left) {
-                while (base < list.get(right) && right > left){
+                while (base <= list.get(right) && right > left){
                     right--;
                 }
-                if (list.get(right) < base) {
+                if (list.get(right) <= base) {
                     list.set(left, list.get(right));
+                } else {
+                    // 该值是最小值，不用排
+                    exchange(start + 1, end, list);
+                    break;
                 }
-                while (list.get(left) < base && right > left) {
+                while (list.get(left) <= base && right > left) {
                     left++;
                 }
-                if (list.get(left) > base) {
+                if (list.get(left) >= base) {
                     list.set(right, list.get(left));
                 }
             }
