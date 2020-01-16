@@ -25,7 +25,7 @@ public class ShellSort {
         return list;
     }
 
-    public static void sortByIncrement (List<Integer> list, int increment) {
+    private static void sortByIncrement (List<Integer> list, int increment) {
         for (int i = 0; i < increment; i++) {
             // 拿到第二个元素，开始做插入排序
             int index = i + increment;

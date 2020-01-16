@@ -9,7 +9,7 @@ public class MergeSort {
         sort(Arrays.asList(2, 5, 3, 4, 1, 8)).forEach(System.out::println);
     }
 
-    private static List<Integer> sort(List<Integer> list) {
+    public static List<Integer> sort(List<Integer> list) {
         if (list.isEmpty()) {
             return list;
         }

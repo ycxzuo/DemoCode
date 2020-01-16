@@ -14,7 +14,7 @@ public class BucketSort {
         sort(Arrays.asList(5,2,4,6,8,1,7,3,9,2)).forEach(System.out::println);
     }
 
-    private static List<Integer> sort(List<Integer> list) {
+    public static List<Integer> sort(List<Integer> list) {
         if (list.isEmpty()) {
             return list;
         }
@@ -39,6 +39,7 @@ public class BucketSort {
         }
         // 存入结果集
         for (int i = 0; i < bucketNumber; i++) {
+            // 可以使用任意的排序方式
             Collections.sort(bucketList.get(i));
             result.addAll(bucketList.get(i));
         }

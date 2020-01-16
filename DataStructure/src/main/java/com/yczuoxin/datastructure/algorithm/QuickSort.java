@@ -13,7 +13,7 @@ public class QuickSort {
         System.out.println(System.currentTimeMillis() - start);
     }
 
-    private static List<Integer> sort(List<Integer> list) {
+    public static List<Integer> sort(List<Integer> list) {
         if (list.isEmpty()) {
             return list;
         }
