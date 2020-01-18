@@ -23,9 +23,9 @@ public class BucketSort {
         int size = list.size();
         List<Integer> result = new ArrayList<>(size);
         // 找到最大值和最小值
-        for (int i = 0; i < size; i++) {
-            max = Math.max(max, list.get(i));
-            min = Math.min(min, list.get(i));
+        for (Integer value : list) {
+            max = Math.max(max, value);
+            min = Math.min(min, value);
         }
         // 创建桶
         int bucketNumber = (max - min) / size + 1;
@@ -34,8 +34,8 @@ public class BucketSort {
             bucketList.add(new ArrayList<>());
         }
         // 放入桶
-        for (int i = 0; i < size; i++) {
-            bucketList.get((list.get(i) - min) / size).add(list.get(i));
+        for (Integer integer : list) {
+            bucketList.get((integer - min) / size).add(integer);
         }
         // 存入结果集
         for (int i = 0; i < bucketNumber; i++) {

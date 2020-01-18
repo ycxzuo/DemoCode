@@ -19,14 +19,12 @@ public class RadixSort {
         // 找到最高位的位数
         int size = list.size();
         int maxLength = 0;
-        int radix = 10;
         for (int i = 0; i < size; i++) {
             int tempLength = String.valueOf(list.get(i)).length();
             if (tempLength > maxLength) {
                 maxLength = tempLength;
             }
         }
-
 
         Integer[] data = list.toArray(new Integer[size]);
         radix(data, 0, maxLength);
