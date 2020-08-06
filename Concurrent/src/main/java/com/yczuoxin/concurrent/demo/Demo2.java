@@ -8,7 +8,7 @@ public class Demo2 {
     public static void main(String[] args) {
         List<String> sortedList = Arrays.asList("唐", "宋", "元", "明", "清");
 
-        List<String> unsortedList = Arrays.asList("元", "清", "宋", "明", "唐");
+        List<String> unsortedList = Arrays.asList("元", "清", "宋", "明", "唐", "隋");
 
         System.out.println(unsortedList);//输出：[元, 清, 宋, 明, 唐]
 
