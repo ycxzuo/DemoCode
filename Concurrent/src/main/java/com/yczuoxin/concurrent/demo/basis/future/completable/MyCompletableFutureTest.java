@@ -1,12 +1,59 @@
 package com.yczuoxin.concurrent.demo.basis.future.completable;
 
+import java.io.Serializable;
 import java.util.concurrent.*;
 
 public class MyCompletableFutureTest {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         //demo1();
         //demo2();
-        demo3();
+        //demo3();
+        //demo4();
+        //demo5();
+    }
+
+    /**
+     * 任务 1 和任务 2 是不同的线程执行
+     * 在 combine 的时候可能是 main 线程，也可能是任务 1 的线程执行
+     *
+     * @throws InterruptedException
+     * @throws ExecutionException
+     */
+    private static void demo5() throws InterruptedException, ExecutionException {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+            print("执行第一个方法: " + Thread.currentThread().getName());
+            //int i = 1/0;
+            return "task1";
+        });
+        CompletableFuture<String> future1 = future.thenCombine(CompletableFuture.supplyAsync(() -> {
+            print("执行第二个方法: " + Thread.currentThread().getName());
+            return "task2";
+        }), (result1, result2) -> {
+            print("执行第三个方法: " + Thread.currentThread().getName());
+            return result1 + " and " + result2;
+        });
+        print(future1.get());
+    }
+
+    /**
+     * 一定会用第一个线程去跑第二个任务
+     *
+     * @throws InterruptedException
+     * @throws ExecutionException
+     */
+    private static void demo4() throws InterruptedException, ExecutionException {
+        CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
+            print("执行第一个方法: " + Thread.currentThread().getName());
+            //int i = 1/0;
+            sleep(1);
+            return "task1";
+        });
+        CompletableFuture<String> future1 = future.thenCompose(result -> CompletableFuture.supplyAsync(() -> {
+            print("执行第二个方法");
+            print("使用线程: " + Thread.currentThread().getName());
+            return result + " and task2";
+        }));
+        print(future1.get());
     }
 
     /**
@@ -21,14 +68,14 @@ public class MyCompletableFutureTest {
         CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
             print("执行第一个方法: " + Thread.currentThread().getName());
             //int i = 1/0;
-            sleep(1);
+            sleep(3);
             return "task1";
         });
         CompletableFuture<String> future1 = future.whenComplete((f, e) -> {
             sleep(1);
             print("执行第二个方法: " + Thread.currentThread().getName());
             print("第一个方法的返回值: " + f);
-            print(e.getMessage());
+            print(e);
         });
         print("main");
         print(future1.get());
@@ -81,11 +128,11 @@ public class MyCompletableFutureTest {
         try {
             TimeUnit.SECONDS.sleep(i);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+
         }
     }
 
-    private static void print(String message) {
+    private static void print(Serializable message) {
         System.out.println(message);
     }
 }
