@@ -19,6 +19,7 @@
         <module>Concurrent</module>
         <module>DataStructure</module>
         <module>JVMDemo</module>
+        <module>reactor</module>
     </modules>
 
     <dependencies>
