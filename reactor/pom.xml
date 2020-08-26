@@ -19,7 +19,10 @@
             <artifactId>reactor-core</artifactId>
             <version>3.3.9.RELEASE</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.reactivestreams</groupId>
+            <artifactId>reactive-streams</artifactId>
+        </dependency>
         <dependency>
             <groupId>io.projectreactor</groupId>
             <artifactId>reactor-test</artifactId>
