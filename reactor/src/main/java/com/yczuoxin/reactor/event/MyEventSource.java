@@ -9,7 +9,7 @@ import java.util.List;
 
 public class MyEventSource {
 
-    private List<MyEventListener> listeners = new ArrayList<>();
+    private final List<MyEventListener> listeners = new ArrayList<>();
 
     public void register(MyEventListener listener){
         listeners.add(listener);
