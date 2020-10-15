@@ -20,6 +20,7 @@
         <module>DataStructure</module>
         <module>JVMDemo</module>
         <module>reactor</module>
+        <module>others</module>
     </modules>
 
     <dependencies>
