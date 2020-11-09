@@ -1,0 +1,14 @@
+server:
+  port: 8090
+
+spring:
+  redis:
+    host: 192.168.175.101
+    password: zuo@xin
+    port: 6379
+    timeout: 2000
+    jedis:
+      pool:
+        max-idle: 20
+        min-idle: 2
+        max-wait: 2000
