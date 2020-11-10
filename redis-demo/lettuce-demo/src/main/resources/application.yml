@@ -1,0 +1,14 @@
+
+server:
+  port: 8091
+
+spring:
+  redis:
+    host: 192.168.175.101
+    port: 6379
+    password: zuo@xin
+    lettuce:
+      pool:
+        max-idle: 20
+        min-idle: 2
+        max-wait: 2000
