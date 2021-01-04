@@ -4,30 +4,25 @@
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>com.yczuoxin</groupId>
-		<artifactId>democode</artifactId>
+		<artifactId>redis-demo</artifactId>
 		<version>0.0.1-SNAPSHOT</version>
-		<relativePath>../pom.xml</relativePath> <!-- lookup parent from repository -->
+		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<artifactId>redis-demo</artifactId>
-	<packaging>pom</packaging>
+	<artifactId>lettuce-demo</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>redis-demo</name>
+	<name>lettuce-demo</name>
 	<description>Demo project for Spring Boot</description>
-
-	<modules>
-		<module>jedis-demo</module>
-		<module>lettuce-demo</module>
-	</modules>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-autoconfigure</artifactId>
+			<artifactId>spring-boot-starter-data-redis</artifactId>
 		</dependency>
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-web</artifactId>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
 		</dependency>
 	</dependencies>
+
 
 </project>
