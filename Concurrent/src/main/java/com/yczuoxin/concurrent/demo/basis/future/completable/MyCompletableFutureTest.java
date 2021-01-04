@@ -7,7 +7,7 @@ public class MyCompletableFutureTest {
     public static void main(String[] args) throws ExecutionException, InterruptedException {
         //demo1();
         //demo2();
-        //demo3();
+        demo3();
         //demo4();
         //demo5();
     }
@@ -44,6 +44,7 @@ public class MyCompletableFutureTest {
     private static void demo4() throws InterruptedException, ExecutionException {
         CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
             print("执行第一个方法: " + Thread.currentThread().getName());
+            print("执行第一个方法是否是守护线程: " + Thread.currentThread().isDaemon());
             //int i = 1/0;
             sleep(1);
             return "task1";
@@ -51,6 +52,7 @@ public class MyCompletableFutureTest {
         CompletableFuture<String> future1 = future.thenCompose(result -> CompletableFuture.supplyAsync(() -> {
             print("执行第二个方法");
             print("使用线程: " + Thread.currentThread().getName());
+            print("执行第二个方法是否是守护线程: " + Thread.currentThread().isDaemon());
             return result + " and task2";
         }));
         print(future1.get());
@@ -67,6 +69,7 @@ public class MyCompletableFutureTest {
     private static void demo3() throws InterruptedException, ExecutionException {
         CompletableFuture<String> future = CompletableFuture.supplyAsync(() -> {
             print("执行第一个方法: " + Thread.currentThread().getName());
+            print("执行第一个方法是否是守护线程: " + Thread.currentThread().isDaemon());
             //int i = 1/0;
             sleep(3);
             return "task1";
@@ -74,6 +77,7 @@ public class MyCompletableFutureTest {
         CompletableFuture<String> future1 = future.whenComplete((f, e) -> {
             sleep(1);
             print("执行第二个方法: " + Thread.currentThread().getName());
+            print("执行第二个方法是否是守护线程: " + Thread.currentThread().isDaemon());
             print("第一个方法的返回值: " + f);
             print(e);
         });
@@ -109,8 +113,8 @@ public class MyCompletableFutureTest {
         }, executorService);
         CompletableFuture<Void> future3 = CompletableFuture.allOf(future, future2);
         future3.get();
-        //print(future2.get());
-        //print(future.get());
+        print(future2.get());
+        print(future.get());
         executorService.shutdown();
     }
 

@@ -1,6 +1,5 @@
 package com.yczuoxin.concurrent.demo.basis.future.completable;
 
-import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 import java.util.stream.Collectors;
