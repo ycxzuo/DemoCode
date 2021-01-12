@@ -1,7 +1,7 @@
-package com.yczuoxin.others.service;
+package com.yczuoxin.others.spring.service;
 
-import com.yczuoxin.others.annotation.TimeLog;
-import com.yczuoxin.others.bean.User;
+import com.yczuoxin.others.spring.annotation.TimeLog;
+import com.yczuoxin.others.spring.bean.User;
 import org.springframework.aop.framework.AopContext;
 import org.springframework.stereotype.Service;
 

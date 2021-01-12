@@ -1,7 +1,7 @@
-package com.yczuoxin.others.controller;
+package com.yczuoxin.others.spring.controller;
 
-import com.yczuoxin.others.bean.User;
-import com.yczuoxin.others.service.UserService;
+import com.yczuoxin.others.spring.bean.User;
+import com.yczuoxin.others.spring.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;

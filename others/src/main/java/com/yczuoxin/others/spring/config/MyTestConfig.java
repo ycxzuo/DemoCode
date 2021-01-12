@@ -1,7 +1,7 @@
-package com.yczuoxin.others.config;
+package com.yczuoxin.others.spring.config;
 
-import com.yczuoxin.others.bean.Car;
-import com.yczuoxin.others.bean.Driver;
+import com.yczuoxin.others.spring.bean.Car;
+import com.yczuoxin.others.spring.bean.Driver;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 

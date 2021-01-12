@@ -1,4 +1,4 @@
-package com.yczuoxin.others.proxy;
+package com.yczuoxin.others.spring.proxy;
 
 public class UserServiceImpl1 implements UserService1 {
     @Override

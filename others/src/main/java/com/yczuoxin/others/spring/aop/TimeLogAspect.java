@@ -1,6 +1,6 @@
-package com.yczuoxin.others.aop;
+package com.yczuoxin.others.spring.aop;
 
-import com.yczuoxin.others.annotation.TimeLog;
+import com.yczuoxin.others.spring.annotation.TimeLog;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

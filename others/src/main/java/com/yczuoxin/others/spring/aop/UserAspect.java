@@ -1,4 +1,4 @@
-package com.yczuoxin.others.aop;
+package com.yczuoxin.others.spring.aop;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class UserAspect implements Ordered {
 
-    @Pointcut("execution(* com.yczuoxin.others.service.UserService.*(..))")
+    @Pointcut("execution(* com.yczuoxin.others.spring.service.UserService.*(..))")
     public void logAspect() {}
 
     @Before("logAspect()")

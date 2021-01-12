@@ -1,4 +1,4 @@
-package com.yczuoxin.others.proxy;
+package com.yczuoxin.others.spring.proxy;
 
 public interface UserService1 {
 

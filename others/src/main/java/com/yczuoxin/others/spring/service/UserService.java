@@ -1,6 +1,6 @@
-package com.yczuoxin.others.service;
+package com.yczuoxin.others.spring.service;
 
-import com.yczuoxin.others.bean.User;
+import com.yczuoxin.others.spring.bean.User;
 
 public interface UserService {
 

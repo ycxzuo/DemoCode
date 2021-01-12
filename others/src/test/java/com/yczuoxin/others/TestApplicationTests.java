@@ -1,7 +1,7 @@
 package com.yczuoxin.others;
 
-import com.yczuoxin.others.bean.Car;
-import com.yczuoxin.others.bean.Driver;
+import com.yczuoxin.others.spring.bean.Car;
+import com.yczuoxin.others.spring.bean.Driver;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

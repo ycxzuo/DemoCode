@@ -1,4 +1,4 @@
-package com.yczuoxin.others.bean;
+package com.yczuoxin.others.spring.bean;
 
 import lombok.Data;
 
