@@ -1,9 +1,8 @@
-package com.yczuoxin.others.string;
+package com.yczuoxin.others.api.jdk.string;
 
-public class Test1 {
-
+public class Test2 {
     public static void main(String[] args) {
-        int count = 200000;
+        int count = 2000;
         testString(count);
         testString2(count);
     }
@@ -12,9 +11,9 @@ public class Test1 {
         String str = "";
         long start = System.currentTimeMillis();
         for (int i = 0; i < count; i++) {
-            str = "a" + "b" + "c" + "d" + "e" + "f" + "g";
+            str += "a" + "b" + "c" + "d" + "e" + "f" + "g";
         }
-        System.out.println("str = " + str + ", testString method takes " + (System.currentTimeMillis() - start) + " millis");
+        System.out.println("testString method takes " + (System.currentTimeMillis() - start) + " millis");
     }
 
     private static void testString2(int count) {
@@ -28,10 +27,8 @@ public class Test1 {
         String g = "g";
         long start = System.currentTimeMillis();
         for (int i = 0; i < count; i++) {
-            str = a + b + c + d + e + f + g;
+            str += a + b + c + d + e + f + g;
         }
-        System.out.println("str = " + str + ", testString method takes " + (System.currentTimeMillis() - start) + " millis");
+        System.out.println("testString method takes " + (System.currentTimeMillis() - start) + " millis");
     }
-
-
 }

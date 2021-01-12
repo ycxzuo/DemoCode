@@ -1,4 +1,4 @@
-package com.yczuoxin.others.concurrent;
+package com.yczuoxin.others.api.jdk.concurrent;
 
 public class VolatileDemo {
     private static boolean flag = false;

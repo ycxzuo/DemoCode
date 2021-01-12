@@ -16,6 +16,7 @@ public class MyReactorTest {
 
             @Override
             public void onError(Throwable t) {
+
                 System.out.println(t.getMessage());
             }
 
