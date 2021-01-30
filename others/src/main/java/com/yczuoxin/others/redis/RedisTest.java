@@ -1,4 +1,4 @@
-package com.yczuoxin.concurrent.other.redis;
+package com.yczuoxin.others.redis;
 
 import redis.clients.jedis.Jedis;
 
