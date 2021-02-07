@@ -104,7 +104,7 @@ public class PrintClassUtil {
             String methodName = method.getName();
 
             Class<?> returnClz = method.getReturnType();
-            String retrunType = returnClz.getName();
+            String returnType = returnClz.getName();
 
             Class<?>[] clzs = method.getParameterTypes();
             StringBuilder paraList = new StringBuilder("(");
@@ -132,7 +132,7 @@ public class PrintClassUtil {
 
             exceptions.append(";");
 
-            String methodPrototype = modifier + retrunType + " " + methodName + paraList + exceptions;
+            String methodPrototype = modifier + returnType + " " + methodName + paraList + exceptions;
 
             System.out.println("    " + methodPrototype);
 
